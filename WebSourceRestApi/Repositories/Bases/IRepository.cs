@@ -1,4 +1,6 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq.Expressions;
 using System.Threading.Tasks;
 
 namespace WebSourceRestApi.Repositories.Bases
@@ -8,7 +10,7 @@ namespace WebSourceRestApi.Repositories.Bases
     {
         Task<T> InsertAsync(T model);
         Task<bool> UpdateAsync(T model);
-        Task<bool> AnyAsync(params object[] keys);
+        Task<bool> AnyAsync(Expression<Func<T, bool>> where);
         Task<bool> DeleteAsync(params object[] keys);
         Task<T> GetAsync(params object[] keys);
         Task<IEnumerable<T>> GetAsync();
