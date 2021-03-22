@@ -1,0 +1,8 @@
+version: '3.4'
+
+services:
+  websourcerestapi:
+    image: ${DOCKER_REGISTRY-}websourcerestapi
+    build:
+      context: .
+      dockerfile: WebSourceRestApi/Dockerfile
